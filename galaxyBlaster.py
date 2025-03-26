@@ -172,12 +172,14 @@ class GalaxyBlaster:
         self.balas_enemigas.draw(self.screen)
         pygame.display.flip()
 
+        #mostrar record si el juego está activo
         if self.juego_activo:
             self.mostrar_record()
 
         pygame.display.flip()
 
-        
+    
+    #muestra el record en pantalla
     def mostrar_record(self):
         tiempo_texto = self.fuente.render(f"Tiempo: {self.tiempo_supervivencia}", True, (255, 255, 255))
         eliminaciones_texto = self.fuente.render(f"Eliminaciones: {self.eliminaciones}", True, (255, 255, 255))
