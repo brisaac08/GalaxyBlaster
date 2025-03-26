@@ -11,7 +11,7 @@ class Ship:
         self.rect = self.image.get_rect()
         self.rect.midbottom = self.screen_rect.midbottom
 
-        self.moviento_derecha = False
+        self.movimiento_derecha = False
         self.movimiento_izquierda = False
         self.movimiento_arriba = False
         self.movimiento_abajo = False
@@ -20,7 +20,7 @@ class Ship:
         self.screen.blit(self.image, self.rect)
 
     def update(self):
-        if self.moviento_derecha:
+        if self.movimiento_derecha:
             self.rect.x += 2
         if self.movimiento_izquierda:
             self.rect.x -= 2
