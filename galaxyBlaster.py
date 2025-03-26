@@ -28,6 +28,7 @@ class GalaxyBlaster:
         self.tiempo_supervivencia = 0
         self.eliminaciones = 0
         self.record = self.cargar_record()
+        self.fuente = pygame.font.Font(None, 36)
         
     def cargar_record(self):
         try:
@@ -170,6 +171,22 @@ class GalaxyBlaster:
         self.enemigos.draw(self.screen)
         self.balas_enemigas.draw(self.screen)
         pygame.display.flip()
+
+        if self.juego_activo:
+            self.mostrar_record()
+
+        pygame.display.flip()
+
+        
+    def mostrar_record(self):
+        tiempo_texto = self.fuente.render(f"Tiempo: {self.tiempo_supervivencia}", True, (255, 255, 255))
+        eliminaciones_texto = self.fuente.render(f"Eliminaciones: {self.eliminaciones}", True, (255, 255, 255))
+        puntaje_actual = (self.tiempo_supervivencia * 10) + (self.eliminaciones * 50)
+        puntaje_texto = self.fuente.render(f"Puntaje: {puntaje_actual}", True, (255, 255, 255))
+
+        self.screen.blit(puntaje_texto, (10, 90))
+        self.screen.blit(tiempo_texto, (10, 10))
+        self.screen.blit(eliminaciones_texto, (10, 50))
 
 if __name__ == '__main__':
     juego = GalaxyBlaster()
