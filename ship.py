@@ -21,10 +21,10 @@ class Ship:
 
     def update(self):
         if self.movimiento_derecha:
-            self.rect.x += 2
+            self.rect.x += 4
         if self.movimiento_izquierda:
-            self.rect.x -= 2
+            self.rect.x -= 4
         if self.movimiento_arriba:
-            self.rect.y -= 2
+            self.rect.y -= 4
         if self.movimiento_abajo:
-            self.rect.y += 2
+            self.rect.y += 4

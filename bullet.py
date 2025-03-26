@@ -19,7 +19,6 @@ class Bullet(Sprite):
         self.y = float(self.rect.y)
 
     def update(self):
-        """Mueve la bala hacia arriba."""
         self.y -= self.settings.velocidad_balas
         self.rect.y = self.y
 
@@ -27,5 +26,4 @@ class Bullet(Sprite):
             self.kill()
 
     def drawBullet(self):
-        """Dibuja la bala en la pantalla."""
         self.screen.blit(self.image, self.rect)

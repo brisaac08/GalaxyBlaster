@@ -141,6 +141,10 @@ class GalaxyBlaster:
                     self.nave.movimiento_derecha = True
                 elif event.key == pygame.K_LEFT:
                     self.nave.movimiento_izquierda = True
+                elif event.key == pygame.K_UP:
+                    self.nave.movimiento_arriba = True
+                elif event.key == pygame.K_DOWN:
+                    self.nave.movimiento_abajo = True
                 elif event.key == pygame.K_SPACE:
                     self.disparar()
             elif event.type == pygame.KEYUP:
@@ -148,6 +152,11 @@ class GalaxyBlaster:
                     self.nave.movimiento_derecha = False
                 elif event.key == pygame.K_LEFT:
                     self.nave.movimiento_izquierda = False
+                elif event.key == pygame.K_UP:
+                    self.nave.movimiento_arriba = False
+                elif event.key == pygame.K_DOWN:
+                    self.nave.movimiento_abajo = False
+        
     
     def disparar(self):
         if len(self.balas) < self.settings.balas_permitidas:
@@ -165,3 +174,4 @@ class GalaxyBlaster:
 if __name__ == '__main__':
     juego = GalaxyBlaster()
     juego.run_game()
+    pygame.quit()
